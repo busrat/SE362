@@ -1,6 +1,15 @@
 <div id="gform">
 
-<p><b>User Login Form
+<head>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header">
+  	<h2>User Login Form</h2>
+  </div>
+
+
 <form action="" method="post">
 <strong>User Name:</strong><br />
 <input type="text" name="username" /><br />
