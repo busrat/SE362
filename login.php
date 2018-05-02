@@ -21,11 +21,11 @@ $uname = mysql_real_escape_string(@$_POST['uname']);
 
 $pw = mysql_real_escape_string(@$_POST['pw']);
 
-$pw = md5($pw);
+// $pw = md5($pw);
 
 if($_POST){
 
-    if($pw=="" || $uname==""){echo "<font color=green><b>Please fill all the fields</font>";}
+    if($pw=="" || $uname==""){echo "<font color=blue><b>Please fill all the fields</font>";}
 
     else{
 
@@ -39,7 +39,7 @@ if($_POST){
         $_SESSION['uname'] = $uname;
         $_SESSION['pw'] = $pw;
 
-        echo "You have successfully logged in"."<br />"; }   
+        echo "<font color=green>You have successfully logged in</font>"."<br />"; }   
 
     }else{
 
@@ -50,4 +50,3 @@ if($_POST){
 }
 
 ?>
-
