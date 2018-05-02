@@ -8,9 +8,12 @@
 <?php
 echo "<font color=green>You have successfully logged in</font>"."<br /><br />";
 ?>
+
 	<form action="search.php" method="POST">
     <input type="text" name="query" />
     <input type="submit" value="Search" />
     </form>
+    <a href="logout.php"><br />Click here to logout</a>
+
 </body>
 </html>
