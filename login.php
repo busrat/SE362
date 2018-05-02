@@ -3,10 +3,10 @@
 <p><b>User Login Form
 <form action="" method="post">
 <strong>User Name:</strong><br />
-<input type="text" name="uname" /><br />
+<input type="text" name="username" /><br />
 
 <strong>Password:</strong> <br />
-<input type="password" name="pw" /><br />
+<input type="password" name="password" /><br />
 <button>Enter</button>
 
 </form>
@@ -14,39 +14,25 @@
 
 <?php
 session_start();
-
  @mysql_select_db("project", mysql_connect("localhost","root",""));
-
-$uname = mysql_real_escape_string(@$_POST['uname']);
-
-$pw = mysql_real_escape_string(@$_POST['pw']);
-
-// $pw = md5($pw);
-
+$username = mysql_real_escape_string(@$_POST['username']);
+$password = mysql_real_escape_string(@$_POST['password']);
+$password = md5($password);
 if($_POST){
-
-    if($pw=="" || $uname==""){echo "<font color=blue><b>Please fill all the fields</font>";}
-
+    if($password=="" || $username==""){echo "<font color=blue><b>Please fill all the fields</font>";}
     else{
-
-    $sql = mysql_query("SELECT * FROM account WHERE uname='$uname' and pw='$pw'");
-
+    $sql = mysql_query("SELECT * FROM account WHERE username='$username' and password='$password'");
     $dataCounter = mysql_num_rows($sql);
-
     if ($dataCounter>0){
-        if($uname=$uname && $pw=$pw) {
-
-        $_SESSION['uname'] = $uname;
-        $_SESSION['pw'] = $pw;
-
-        echo "<font color=green>You have successfully logged in</font>"."<br />"; }   
-
+        if($username=$username && $password=$password) {
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
+        echo "<font color=green>You have successfully logged in</font>"."<br />"; 
+		header('location: index.php');}   
     }else{
-
-        echo "<font color=red><b>Please check, user name or password is wrong.</font>";
-
+        echo "<font color=red><b>Please check, username or password is wrong.</font>";
     }
+	
 }
 }
-
 ?>
