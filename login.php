@@ -1,28 +1,36 @@
-<div id="gform">
-
+<?php include('server.php'); ?>
+<!DOCTYPE html>
+<html>
 <head>
-
-  <link rel="stylesheet" type="text/css" href="style.css">
+<title>User registration system using PHP and MySQL</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">
-  	<h2>User Login Form</h2>
+  	<h2>Login</h2>
   </div>
 
 
-<form action="" method="post">
-<strong>User Name:</strong><br />
-<input type="text" name="username" /><br />
-
-<strong>Password:</strong> <br />
-<input type="password" name="password" /><br />
-<button>Enter</button>
-
-</form>
+<form method="post" action="login.php">
+<?php include('errors.php'); ?>
+<div class ="input-group">
+<label>User Name:</label>
+<input type="text" name="username" />
 </div>
-
+<div class ="input-group">
+<label>Password:</label> 
+<input type="password" name="password" />
+</div>
+<div class ="input-group">
+<button type="submit" name="login" class="btn">Login</button>
+</div>
+<p>
+Not yet a member? <a href="register.php">Sign up</a>
+</p>
+</form>
+</body>
+</html>
 <?php
-session_start();
  @mysql_select_db("project", mysql_connect("localhost","root",""));
 $username = mysql_real_escape_string(@$_POST['username']);
 $password = mysql_real_escape_string(@$_POST['password']);
@@ -36,7 +44,7 @@ if($_POST){
         if($username=$username && $password=$password) {
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
-        echo "<font color=green>You have successfully logged in</font>"."<br />"; 
+		$_SESSION['login'] = true;
 		header('location: index.php');}   
     }else{
         echo "<font color=red><b>Please check, username or password is wrong.</font>";
