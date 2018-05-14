@@ -1,25 +1,20 @@
+<?php include('server.php') ?>
 <?php
     @mysql_select_db("project", mysql_connect("localhost","root",""));
-
-    $query = $_POST['query'];
+    $query = isset($_POST['query']);
     $topic = mysql_query("select * from courses where code like '%$query%'");
-
 $number=mysql_num_rows($topic); 
     if($query=="") {
         echo "You can not make a blank call";
 }
-
 else if ($number<1) { echo "No results found for your search <a href='index.php'> Turn back.</a>";} 
-
 else {
     while($find = mysql_fetch_array($topic)) {
         $code = $find['code'];
         $name = $find['name'];
         $link = $find['link'];
-
     echo $code." ".$name." ";
     echo '<a href="' . $link . '">Go to page of the course</a>';
-
     }
 }
 ?>
