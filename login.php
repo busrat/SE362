@@ -1,6 +1,9 @@
-<?php include('server.php'); 
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<?php include('server.php');  
 if(!empty($_SESSION['username'])){
-	echo ("You are already logged in!");?>
+	echo "You are already logged in!";?>
 	<p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
 	Wanna start searching? <a href="index.php">Click here!</a>
 	<?php exit; 
@@ -51,8 +54,7 @@ if($_POST){
         $_SESSION['password'] = $password;
 		$_SESSION['login'] = true;
 		header('location: index.php');}   
-    }else{
-        echo "<font color=red><b>Please check, username or password is wrong.</font>";
+    
     }
 	
 }
