@@ -1,5 +1,10 @@
 <?php
-session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+<?php
 // initializing variables
 $username = "";
 $email    = "";
@@ -40,7 +45,7 @@ if (isset($_POST['reg_user'])) {
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
   }
-  if ($user) { // if user exists
+  if ($username) { // if user exists
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
     }
