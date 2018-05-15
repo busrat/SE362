@@ -1,8 +1,12 @@
+<ul>
+  <li><a href="index.php">Home sweet home</a></li>
+  <li><a href="index.php">Do you want to search for courses?</a></li>
+</ul>
+
 <head>
-	 <link rel="stylesheet" type="text/css" href="style.css">
 	 <?php 
 	 include('server.php');
-	 include_once("menu.php"); 
+	
 	 if(empty($_SESSION['username'])){
 		 echo "You cannot comment on the courses without logging in.";
 exit;
@@ -18,4 +22,3 @@ exit;
 
 </form>
 </html>
-
