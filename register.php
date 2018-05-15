@@ -1,17 +1,18 @@
-<?php include('server.php'); 
-include_once("menu.php"); 
+<ul>
+  <li><a href="index.php">Home sweet home</a></li>
+  <li><a href="index.php">Do you want to search for courses?</a></li>
+  <li><a href="comment.php">Wanna comment on the courses?</a></li>
+</ul>
+
+
+<?php include('server.php');  
 if(!empty($_SESSION['username'])){
 	echo ("You must log out first to register as a new user.");?>
 	<p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
-	Wanna start searching? <a href="index.php">Click here!</a>
 	<?php exit; 
 }?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 <body>
   <div class="header">
   	<h2>Register</h2>
