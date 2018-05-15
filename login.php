@@ -1,12 +1,13 @@
 <?php include('server.php'); 
 if(!empty($_SESSION['username'])){
-	echo ("You are already logged in!");
-	exit;
+	echo ("You are already logged in!");?>
+	<p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
+	Wanna start searching? <a href="index.php">Click here!</a>
+	<?php exit; 
 }?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>User registration system using PHP and MySQL</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
