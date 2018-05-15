@@ -1,4 +1,5 @@
 <?php
+include_once("menu.php"); 
     @mysql_select_db("project", mysql_connect("localhost","root",""));
     $query = $_POST['query'];
     $topic = mysql_query("select * from courses where code like '%$query%'");
