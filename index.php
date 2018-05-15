@@ -1,6 +1,10 @@
+<ul>
+  <li><a href="index.php">Home sweet home</a></li>
+  <li><a href="comment.php">Wanna comment on the courses?</a></li>
+</ul>
+
 <?php include('server.php');
- 
-include_once("menu.php"); 
+
 if(empty($_SESSION['username'])){
 	header('location: login.php');
 	echo "You cannot leave comments without logging in!";
@@ -9,7 +13,7 @@ if(empty($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 <div class="header">
@@ -33,7 +37,7 @@ unset($_SESSION['success']);
 <?php endif ?>
 <head>
     <title>Search</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+
     <meta http-equiv="content" content="text/html; charset=utf-8" />
 	
 </head>
