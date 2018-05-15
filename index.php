@@ -1,6 +1,9 @@
-<?php include('server.php'); 
+<?php include('server.php');
+ 
+include_once("menu.php"); 
 if(empty($_SESSION['username'])){
 	header('location: login.php');
+	echo "You cannot leave comments without logging in!";
 }
  ?>
 <!DOCTYPE html>
@@ -39,6 +42,5 @@ unset($_SESSION['success']);
     <input type="text" name="query" />
     <input type="submit" value="Search" />
     </form>
-
 </body>
 </html>
