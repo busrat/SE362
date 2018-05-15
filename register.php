@@ -1,4 +1,11 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+include_once("menu.php"); 
+if(!empty($_SESSION['username'])){
+	echo ("You must log out first to register as a new user.");?>
+	<p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
+	Wanna start searching? <a href="index.php">Click here!</a>
+	<?php exit; 
+}?>
 <!DOCTYPE html>
 <html>
 <head>
