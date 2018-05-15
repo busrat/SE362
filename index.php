@@ -6,8 +6,7 @@ if(empty($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Registration System using PHP and MySQL</title>
-	<link rel= "stylesheet" type="test/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="header">
@@ -29,26 +28,17 @@ unset($_SESSION['success']);
 <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
 <p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
 <?php endif ?>
-</div>
-</body>
-</html>
-
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Search</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="content" content="text/html; charset=utf-8" />
+	
 </head>
-<body>
-<?php
-echo "<font color=green>You have been successfully logged in</font>"."<br /><br />";
-?>
-
+</div>
 	<form action="search.php" method="POST">
     <input type="text" name="query" />
     <input type="submit" value="Search" />
     </form>
-    <a href="logout.php"><br />Click here to logout</a>
 
 </body>
 </html>
