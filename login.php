@@ -1,7 +1,12 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+if(!empty($_SESSION['username'])){
+	echo ("You are already logged in!");
+	exit;
+}?>
 <!DOCTYPE html>
 <html>
 <head>
+<title>User registration system using PHP and MySQL</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
