@@ -1,6 +1,8 @@
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<ul>
+  <li><a href="index.php">Home sweet home</a></li>
+  <li><a href="index.php">Do you want to search for courses?</a></li>
+  <li><a href="comment.php">Wanna comment on the courses?</a></li>
+</ul>
 <?php include('server.php');  
 if(!empty($_SESSION['username'])){
 	echo "You are already logged in!";?>
@@ -11,7 +13,7 @@ if(!empty($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
   <div class="header">
@@ -43,20 +45,5 @@ Not yet a member? <a href="register.php">Sign up</a>
 $username = mysql_real_escape_string(@$_POST['username']);
 $password = mysql_real_escape_string(@$_POST['password']);
 $password = md5($password);
-if($_POST){
-    if($password=="" || $username==""){echo "<font color=blue><b>Please fill all the fields</font>";}
-    else{
-    $sql = mysql_query("SELECT * FROM account WHERE username='$username' and password='$password'");
-    $dataCounter = mysql_num_rows($sql);
-    if ($dataCounter>0){
-        if($username=$username && $password=$password) {
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-		$_SESSION['login'] = true;
-		header('location: index.php');}   
-    
-    }
-	
-}
-}
+
 ?>
